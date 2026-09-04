@@ -1,0 +1,21 @@
+name: "MatPES_PBE_Final_Finetuned"
+train_file: "./result/training-data-mlblbu-20.xyz"
+test_file: "./result/testing-data-mlblbu-20.xyz"
+foundation_model: "./result/MACE-matpes-pbe-omat-ft.model"
+checkpoints_dir: "./checkpoints"
+results_dir: "./training_reports"
+valid_fraction: 0.10
+swa: True
+batch_size: 4
+max_num_epochs: 100
+forces_weight: 10
+energy_weight: 1
+stress_weight: 0
+device: "cuda"
+restart_latest: True
+save_all_checkpoints: True
+
+heads:
+  zhoulab:
+    E0s: "./result/e0s.json"  
+    default_dtype: "float64"
